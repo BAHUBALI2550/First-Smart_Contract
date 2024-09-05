@@ -10,9 +10,9 @@ contract DeployFundMe is Script {
         HelperConfig helperConfig = new HelperConfig(); // This comes with our mocks!
         address priceFeed = helperConfig.getConfigByChainId(block.chainid).priceFeed;
 
-       // Before startBroadcast is a simulation not a txn
+        // Before startBroadcast is a simulation not a txn
 
-       // After startBroadcast is a real txn, so keep in mind of gas fee
+        // After startBroadcast is a real txn, so keep in mind of gas fee
         vm.startBroadcast();
         FundMe fundMe = new FundMe(priceFeed);
         vm.stopBroadcast();
